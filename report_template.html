@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compreport AI – Industrial News</title>
+  <link rel="stylesheet" href="static/style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .hidden { display: none; }
+    nav a {
+      cursor: pointer;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-bg video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .overlay-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  z-index: 1;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translate(-50%, -40%); }
+      100% { opacity: 1; transform: translate(-50%, -50%); }
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #005fa3;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+    header, footer {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+  </style>
+</head>
+<body>
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="static/rotors.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <header>
+    <h1>Compreport AI</h1>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('report')">Nigeria Report</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Homepage Section -->
+    <section id="home">
+      <div class="overlay-text">
+        <h2>Welcome to Compreport AI</h2>
+        <p>
+          Compreport AI is an intelligent reporting tool designed to monitor and analyze industrial, construction, and economic developments across Nigeria. Our system continuously curates relevant news, categorizes content by sector, and delivers insights that can inform business decisions and strategy — especially for stakeholders in the compressor and manufacturing space.
+        </p>
+        <a class="cta-button" onclick="showSection('report')">📊 View Nigeria Report</a>
+      </div>
+    </section>
+
+    <!-- Nigeria Report Section -->
+    <section id="report" class="hidden">
+      {% for category, articles in grouped_articles.items() %}
+      <div class="category">
+        <h2>{{ category }}</h2>
+        {% for article in articles %}
+        <div class="article">
+          <h3>{{ article.title }}</h3>
+          <p><strong>Summary:</strong> {{ article.summary }}</p>
+          <p><strong>Suggestion:</strong> {{ article.suggestion }}</p>
+          <p><a href="{{ article.url }}" target="_blank">🔗 Read more</a></p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </section>
+  </div>
+
+  <footer class="footer-fixed-bottom">
+    <p>Compreport AI &copy; {{ current_year }}</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('report').classList.add('hidden');
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

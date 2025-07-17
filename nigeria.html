@@ -1,0 +1,886 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compreport AI – Industrial News</title>
+  <link rel="stylesheet" href="static/style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .hidden { display: none; }
+    nav a {
+      cursor: pointer;
+    }
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-bg video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .overlay-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  border-radius: 12px;
+  z-index: 1;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translate(-50%, -40%); }
+      100% { opacity: 1; transform: translate(-50%, -50%); }
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #005fa3;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+    header, footer {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .footer-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+  </style>
+</head>
+<body>
+  <div class="video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="static/rotors.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <header>
+    <h1>Compreport AI</h1>
+    <nav>
+      <a onclick="showSection('home')">Home</a>
+      <a onclick="showSection('report')">Nigeria Report</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Homepage Section -->
+    <section id="home">
+      <div class="overlay-text">
+        <h2>Welcome to Compreport AI</h2>
+        <p>
+          Compreport AI is an intelligent reporting tool designed to monitor and analyze industrial, construction, and economic developments across Nigeria. Our system continuously curates relevant news, categorizes content by sector, and delivers insights that can inform business decisions and strategy — especially for stakeholders in the compressor and manufacturing space.
+        </p>
+        <a class="cta-button" onclick="showSection('report')">📊 View Nigeria Report</a>
+      </div>
+    </section>
+
+    <!-- Nigeria Report Section -->
+    <section id="report" class="hidden">
+      
+      <div class="category">
+        <h2>construction</h2>
+        
+        <div class="article">
+          <h3>Dangote plans construction of Nigeria’s largest seaport</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/news/top-news/807251-dangote-plans-construction-of-nigerias-largest-seaport.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s Agro-Revolution: Construction of Special Agro-Industrial Processing Zones (SAPZ) begins</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/press-releases/nigerias-agro-revolution-construction-special-agro-industrial-processing-zones-sapz-begins-82556" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>13 Years After, Kebbi Restarts Construction of Nigeria’s Largest Veterinary Hospital</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://agronigeria.ng/13-years-after-kebbi-restarts-construction-of-nigerias-largest-veterinary-hospital/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG secures $747m loan for Lagos-Calabar Coastal Highway</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/fg-secures-747m-loan-for-lagos-calabar-coastal-highway/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>MPAC condemns suspension of mosque construction in Osun</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://dailypost.ng/2025/07/12/mpac-condemns-suspension-of-mosque-construction-in-osun/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria secures $747 million syndicated loan for Lagos-Calabar Coastal Highway</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nairametrics.com/2025/07/10/nigeria-secures-747-million-syndicated-loan-for-lagos-calabar-coastal-highway/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria weighs urgent replacement for crumbling bridges to Lagos island</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.globalconstructionreview.com/nigeria-weighs-urgent-replacement-for-crumbling-bridges-to-lagos-island/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s Cross River State second to commence construction of its Special Agro-Industrial Processing Zone</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/press-releases/nigerias-cross-river-state-second-commence-construction-its-special-agro-industrial-processing-zone-82874" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Building under construction collapses in Lagos</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://von.gov.ng/building-under-construction-collapses-in-lagos/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Economic instability and Nigeria’s construction industry</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://thenationonlineng.net/economic-instability-and-nigerias-construction-industry/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Northeast Nigeria to experience power disruptions, as TCN begins construction of transmission line</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/business/800158-northeast-nigeria-to-experience-power-disruptions-as-tcn-begins-construction-of-transmission-line.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Northern Nigeria enjoying 52% of ongoing road construction – Umahi</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/northern-nigeria-enjoying-52-of-ongoing-road-construction-umahi/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s CutStruct Gets $1.5M to Streamline Construction Procurement</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.dabafinance.com/en/news/nigerias-cutstruct-gets-1-5m-to-streamline-construction-procurement" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria Olympic Committee commences construction of permanent secretariat in Abuja</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/sports/nigeria-sports-news/801122-nigeria-olympic-committee-commences-construction-of-permanent-secretariat-in-abuja.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>G. Cappa appoints Oyetibo as chair to reposition Nigeria’s construction industry</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/g-cappa-appoints-oyetibo-as-chair-to-reposition-nigerias-construction-industry/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria should halt importation of construction materials – Scholar</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://guardian.ng/news/nigeria-should-halt-importation-of-construction-materials-scholar/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Construction underway for Nigeria's $10 billion coastal highway</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.globalhighways.com/news/construction-underway-nigerias-10-billion-coastal-highway" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria has over 190 construction careers females can pursue – Expert</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/careers/article/nigeria-has-over-190-construction-careers-females-can-pursue-expert/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>NIGERIA: Salesian sisters start construction on new nursery and primary school</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://missionnewswire.org/nigeria-salesian-sisters-start-construction-on-new-nursery-and-primary-school-thanks-to-donor-funding-from-salesian-missions/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FEC approves N4.2trn for Second Niger Bridge, road infrastructure projects across Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.vanguardngr.com/2025/02/fec-approves-n4-2trn-for-second-niger-bridge-road-infrastructure-projects-across-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>CutStruct Closes $1.5M Seed To Expand Construction Procurement Platform In Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://techbuild.africa/cutstruct-1-5m-seed-construction-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>How AqualfaDecor is redefining Nigeria’s construction industry</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.vanguardngr.com/2025/03/how-aqualfadecor-is-redefining-nigerias-construction-industry/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Policy gaps undermining sustainable development in Nigeria’s construction sector – Expert warns</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.vanguardngr.com/2025/04/policy-gaps-undermining-sustainable-development-in-nigerias-construction-sector-expert-warns/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>How AI is Transforming the Construction Industry in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.thisdaylive.com/index.php/2025/01/14/how-ai-is-transforming-the-construction-industry-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Quantity surveyors push for cost-efficient construction in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/quantity-surveyors-push-for-cost-efficient-construction-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>other</h2>
+        
+        <div class="article">
+          <h3>Nigeria First Policy: BPP, SON Partner on Industrial Standard Integration</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businesspost.ng/general/nigeria-first-policy-bpp-son-partner-on-industrial-standard-integration/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria First Policy: BPP, SON Partner On Nigeria Industrial Standard (NIS) Integration Into Public Procurement Process</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://fmino.gov.ng/nigeria-first-policy-bpp-son-partner-on-nigeria-industrial-standard-nis-integration-into-public-procurement-process/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://inventa.com/where-we-act/africa/nigeria" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>IRWG ignites Nigeria’s industrial transformation</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://thenationonlineng.net/irwg-ignites-nigerias-industrial-transformation/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria Losing N500b to Industrial Accidents – VC FUL</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://dailytrust.com/nigeria-losing-n500b-to-industrial-accidents-vc-ful/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria eyes mining, automotive transformation for industrial revolution</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/nigeria-eyes-mining-automotive-transformation-for-industrial-revolution/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Industrial Evolution: Nasarawa, Nigeria’s emerging ‘China’</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://guardian.ng/opinion/industrial-evolution-nasarawa-nigerias-emerging-china/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s Growing Population Needs Industrial Solution — Tinubu</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.channelstv.com/2025/05/21/nigerias-growing-population-needs-industrial-solution-tinubu/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>‘Nigeria First’ industrial ambition needs a robust policy architecture, not just presidential decree</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/who-is-thinking-for-nigeria/yaba-school-of-thought/article/nigeria-first-industrial-ambition-needs-a-robust-policy-architecture-not-just-presidential-decree/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Klinserve, Hako partner to roll out industrial cleaning machines in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/klinserve-hako-partner-to-roll-out-industrial-cleaning-machines-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria, UNIDO sign $174.59m deal to create jobs, boost development</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/nigeria-unido-sign-174-59m-deal-to-create-jobs-boost-development/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Industrial evolution: Nasarawa, Nigeria’s emerging ‘China’</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.thecable.ng/industrial-evolution-nasarawa-nigerias-emerging-china/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG Reaffirms Commitment To Nigeria’s Industrial Transformation, Economic Growth</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nannews.ng/2025/02/02/fg-reaffirms-commitment-to-nigerias-industrial-transformation-economic-growth/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria, UNIDO seal over $174m deal to boost industrial development</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://apanews.net/nigeria-unido-seal-over-174m-deal-to-boost-industrial-development/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG commits to unlocking full potential of Nigeria’s industrial transformation</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.vanguardngr.com/2025/05/fg-commits-to-unlocking-full-potential-of-nigerias-industrial-transformation/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>International Finance Corporation (IFC) Invests in Lagos Free Zone to Support Industrial Growth and Economic Diversification in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://african.business/2025/02/apo-newsfeed/international-finance-corporation-ifc-invests-in-lagos-free-zone-to-support-industrial-growth-and-economic-diversification-in-nigeria-3" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>How removal of import duties on solar raw materials can boost Nigeria’s industrial future</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/how-removal-of-import-duties-on-solar-raw-materials-can-boost-nigerias-industrial-future/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria targets mining, automotive sectors to drive industrial revolution</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://guardian.ng/business-services/industry/nigeria-targets-mining-automotive-sectors-to-drive-industrial-revolution/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Homegrown talent key to Nigeria’s industrial growth – Expert</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/homegrown-talent-key-to-nigerias-industrial-growth-expert/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Dangote Refinery an Industrial Revolution, Liberating Nigeria – C’tee on Domestic Crude Oil Sales</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.energyfocusreport.com/dangote-refinery-an-industrial-revolution-liberating-nigeria-ctee-on-domestic-crude-oil-sales/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigerian Exchange Robust Enough to Drive Industrial Growth—Popoola</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businesspost.ng/economy/nigerian-exchange-robust-enough-to-drive-industrial-growth-popoola/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Tinubu’s “Nigeria First” policy to accelerate Nigeria’s industrial growth—NASENI</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nairametrics.com/2025/05/12/tinubus-nigeria-first-policy-to-accelerate-nigerias-industrial-growth-naseni/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>‘Women key to Nigeria’s industrial revolution’</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.vanguardngr.com/2025/03/women-key-to-nigerias-industrial-revolution/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG, UNIDO Partner To Strengthen Nigeria’s Industrial Future</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nannews.ng/2025/04/02/fg-unido-partner-to-strengthen-nigerias-industrial-future/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Why Nigeria needs education for industrial development –NESG</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://dailytrust.com/why-nigeria-needs-education-for-industrial-development-nesg/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>China, Nigeria explores strategic industrial, educational partnership</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://thenationonlineng.net/china-nigeria-explores-strategic-industrial-educational-partnership/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria, UNIDO Sign $175m Deal for Industrial Development</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://dmarketforces.com/nigeria-unido-sign-175m-deal-for-industrial-development/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>agro-industry</h2>
+        
+        <div class="article">
+          <h3>Cross River Urges Youths to Embrace Agro-Industrial Opportunities</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://von.gov.ng/cross-river-urges-youths-to-embrace-agro-industrial-opportunities/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Raw agro exports weaken Nigeria’s industrial ambition</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/pro/article/raw-agro-exports-weaken-nigerias-industrial-ambition/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>African Development Bank and Federal Government of Nigeria to Launch Special Agro-Industrial Processing Zones (SAPZ) Phase 1</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/events/african-development-bank-and-federal-government-nigeria-launch-special-agro-industrial-processing-zones-sapz-phase-1-82213" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s food and agriculture revolution takes off backed by the African Development Bank</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/press-releases/nigerias-food-and-agriculture-revolution-takes-backed-african-development-bank-82711" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>How Nigeria can transform cassava crop from subsistence to industrial driver</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/agriculture/article/how-nigeria-can-transform-cassava-crop-from-subsistence-to-industrial-driver/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Speech Delivered by Dr. Akinwumi A. Adesina President and Chairman of the Boards of Directors African Development Bank Group - Groundbreaking Ceremony for the Launch of the Special Agro-Industrial Processing Zones in Kaduna State, Nigeria April 8, 2</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/speeches/speech-delivered-dr-akinwumi-adesina-president-and-chairman-boards-directors-african-development-bank-group-groundbreaking-ceremony-launch-special-agro-industrial-processing-zones-kaduna-state-nigeria-april-8-2025-82629" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Speech Delivered by Dr. Akinwumi A. Adesina President and Chairman of the Boards of Directors African Development Bank Group - Groundbreaking Ceremony for the Launch of the Special Agro-Industrial Processing Zones in Cross Rivers State, Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/speeches/speech-delivered-dr-akinwumi-adesina-president-and-chairman-boards-directors-african-development-bank-group-groundbreaking-ceremony-launch-special-agro-industrial-processing-zones-cross-rivers-state-nigeria-82757" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>SPN - Nigeria - Design, Build and Operation of an Agro-Industrial Hub (AIH) and Agricultural Transformation Center (ATC) in Cross River State - SAPZ</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/documents/spn-nigeria-design-build-and-operation-agro-industrial-hub-aih-and-agricultural-transformation-center-atc-cross-river-state-sapz" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria: African Development Bank and partners agree to fast-track implementation of Special Agro Industrial Processing Zones program</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/news-and-events/press-releases/nigeria-african-development-bank-and-partners-agree-fast-track-implementation-special-agro-industrial-processing-zones-program-74779" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>SPN - Nigeria - Design, Build and Operation of Agro-Industrial Hub (AIH) and Agricultural Transformation Center (ATC) in Kaduna State - SAPZ</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.afdb.org/en/documents/spn-nigeria-design-build-and-operation-agro-industrial-hub-aih-and-agricultural-transformation-center-atc-kaduna-state-sapz" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Cassava takes centre stage in Nigeria’s industrial push — Shettima</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://thenationonlineng.net/cassava-takes-centre-stage-in-nigerias-industrial-push-shettima/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>AfDB dissatisfied with $210m Nigeria agro-industrial zones project</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/afdb-dissatisfied-with-210m-nigeria-agro-industrial-zones-project/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria to benefit from $4.4bn agro-industrial investment – AfDB</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/nigeria-to-benefit-from-4-4bn-agro-industrial-investment-afdb/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s cassava output lags growing industrial demand</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/pro/article/nigerias-cassava-output-lags-growing-industrial-demand/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria partners AfDB, others to kick-off $538 million Agro-Industrial processing zone</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/business/business-news/787160-nigeria-partners-afdb-others-to-kick-off-538-million-agro-industrial-processing-zone.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Kaduna launches first special agro-industrial processing zone in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/promoted/786743-kaduna-launches-first-special-agro-industrial-processing-zone-in-nigeria.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Kaduna Launches Nigeria’s First Special Agro-industrial Processing Zone</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nannews.ng/2025/04/08/kaduna-launches-nigerias-first-special-agro-industrial-processing-zone/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>AfDB mobilises $2.2bn for Nigeria’s agro-industrial hubs</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/afdb-mobilises-2-2bn-for-nigerias-agro-industrial-hubs/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria to benefit from $4.4bn agro-industrial investment – AfDB</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://apanews.net/nigeria-to-benefit-from-4-4bn-agro-industrial-investment-afdb/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>What you should know about Nigeria’s Special Agro-Industrial Processing Zones</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/agriculture/article/what-you-should-know-about-nigerias-special-agro-industrial-processing-zones/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Kaduna State launches Nigeria’s first special agro-industrial processing zone</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nairametrics.com/2025/04/08/kaduna-state-launches-nigerias-first-special-agro-industrial-processing-zone/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria to benefit from $4.4bn agro-industrial investment – AfDB</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/news/article/nigeria-to-benefit-from-4-4bn-agro-industrial-investment-afdb/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>manufacturing</h2>
+        
+        <div class="article">
+          <h3>FG begins bamboo factory in Kogi, plans seven more across Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://punchng.com/fg-begins-bamboo-factory-in-kogi-plans-seven-more-across-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Livestock Minister Urges Ecogold To Establish Feed Factory In Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://sciencenigeria.com/livestock-minister-urges-ecogold-to-establish-feed-factory-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nasarawa to establish first electric vehicles production factory in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.environewsnigeria.com/nasarawa-to-establish-first-electric-vehicles-production-factory-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Dangote to build new cement factory and Nigeria’s largest port</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://africa.businessinsider.com/local/markets/dangote-to-build-new-cement-factory-and-nigerias-largest-port/c16n963" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigerian Air Force Destroys IED Factory In Borno State</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://von.gov.ng/nigerian-air-force-destroys-ied-factory-in-borno-state/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s first industrial biochar plant to cut 100,000 tonnes of co₂e by 2030</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/nigerias-first-industrial-biochar-plant-to-cut-100000-tonnes-of-co%E2%82%82e-by-2030/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nasarawa to Establish First Electric Vehicles Production Factory in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.thisdaylive.com/2025/05/27/nasarawa-to-establish-first-electric-vehicles-production-factory-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>World’s largest electric vehicle-producing country set to establish an EV plant in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://africa.businessinsider.com/local/markets/china-set-to-establish-an-electric-vehicle-ev-plant-in-nigeria/mvtp3py" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria gets first disposable syringe factory</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://guardian.ng/business-services/business/nigeria-gets-first-disposable-syringe-factory/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>energy</h2>
+        
+        <div class="article">
+          <h3>Nigeria charts industrial growth through gas turbine deployment</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/energy/oilandgas/article/nigeria-charts-industrial-growth-through-gas-turbine-deployment/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Industrial and Medical Gases Nigeria PLC (IMG.ng) 2024 Annual Report</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://africanfinancials.com/document/ng-img-2024-ar-00/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Industrial and Medical Gases Nigeria PLC (IMG.ng) Q12025 Interim Report</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://africanfinancials.com/document/ng-img-2025-ir-q1/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>How NASENI’s EMDI Collaboration Is Powering Nigeria’s Industrial Growth</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://dailytrust.com/how-nasenis-emdi-collaboration-is-powering-nigerias-industrial-growth/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s free zones: Powering inward investment and industrial growth</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/opinion/article/nigerias-free-zones-powering-inward-investment-and-industrial-growth/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria’s industrial growth lies in harnessing natural gas, says Optimera Energy CEO</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/nigerias-industrial-growth-lies-in-harnessing-natural-gas-says-optimera-energy-ceo/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG reaffirms commitment to industrial growth, youth empowerment through ‘Nigeria First’ policy</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://thenationonlineng.net/fg-reaffirms-commitment-to-industrial-growth-youth-empowerment-through-nigeria-first-policy/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Nigeria Explores CNG Technology to Power Defence, Industrial Vehicle Fleets</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.thisdaylive.com/2025/03/28/nigeria-explores-cng-technology-to-power-defence-industrial-vehicle-fleets/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG calls on private sector to power Nigeria’s industrial revolution</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/news/article/fg-calls-on-private-sector-to-power-nigerias-industrial-revolution/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>defense/tech</h2>
+        
+        <div class="article">
+          <h3>Nigeria’s central bank refutes claim that old bank notes will no longer be a legal tender</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://africacheck.org/fact-checks/meta-programme-fact-checks/nigerias-central-bank-refutes-claim-old-bank-notes-will-no" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>BADARU CALLS FOR SYNERGY IN MILITARY INDUSTRIAL COMPLEX AS NIGERIA LEVERAGES TECHNOLOGY FOR SECURITY – Ministry of Defence</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://defence.gov.ng/2024/10/16/badaru-calls-for-synergy-in-military-industrial-complex-as-nigeria-leverages-technology-for-security/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>DICON-D7G: Developing Viable Military Industrial Complex In Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nannews.ng/2025/03/27/dicon-d7g-developing-viable-military-industrial-complex-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>FG’s Tech Committee Hails $20bn Dangote Petroleum Refinery’s Industrial Revolution in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.thisdaylive.com/2025/06/20/fgs-tech-committee-hails-20bn-dangote-petroleum-refinerys-industrial-revolution-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Beta Glass invests in local supply chains to boost industrial growth in Nigeria</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://businessday.ng/companies/article/beta-glass-invests-in-local-supply-chains-to-boost-industrial-growth-in-nigeria/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Gov Mbah Hails Enugu Workers’ Sacrifices, Industrial Harmony</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://nannews.ng/2025/05/01/gov-mbah-hails-enugu-workers-sacrifices-industrial-harmony/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+        <div class="article">
+          <h3>Shell Nigeria Student Industrial Training and Internship Programme 2025 for Nigerian students.</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.opportunitiesforafricans.com/shell-nigeria-student-industrial-training-and-internship-programme-2025-for-nigerian-students/" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+      <div class="category">
+        <h2>finance/investment</h2>
+        
+        <div class="article">
+          <h3>US tariff hike could hurt Nigeria’s export earnings, industrial growth – MAN</h3>
+          <p><strong>Summary:</strong> </p>
+          <p><strong>Suggestion:</strong> No AI suggestion (feature disabled).</p>
+          <p><a href="https://www.premiumtimesng.com/business/business-news/788372-us-tariff-hike-could-hurt-nigerias-export-earnings-industrial-growth-man.html" target="_blank">🔗 Read more</a></p>
+        </div>
+        
+      </div>
+      
+    </section>
+  </div>
+
+  <footer class="footer-fixed-bottom">
+    <p>Compreport AI &copy; 2025</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('home').classList.add('hidden');
+      document.getElementById('report').classList.add('hidden');
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
