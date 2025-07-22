@@ -1,6 +1,6 @@
 # Compreport AI
 
-**Compreport AI** is an intelligent reporting tool designed to monitor and analyze industrial, construction, and economic developments across Nigeria and more. It fetches news articles using SerpAPI, categorizes them into relevant sectors, and presents a paginated, searchable, and filterable report for business and policy insight.
+**Compreport AI** is an intelligent reporting tool designed to monitor and analyze industrial, construction, and economic developments across Nigeria and more. It fetches news articles using SerpAPI, categorizes them into relevant sectors, and presents a paginated, searchable, and filterable report for business and policy insights.
 
 ---
 
